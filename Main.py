@@ -168,28 +168,32 @@ if __name__ == "__main__":
                 if quicksort(test, 0, len(test) - 1, 1, time_limit, start_time,0) in ["DNF", "DNF-rec limit"]:
                     l.append("DNF")
                 else:
+                    time1=time.time() - start_time
                     if check(test):
-                        l.append(str(time.time() - start_time))
+                        l.append(str(time1))
                     else:
-                        l.append(f"Not sorted correctly, time:{time.time() - start_time}",time.time() - start_time)
+                        l.append(f"Not sorted correctly, time:{time1}")
             else:
+                start_time = time.time()
                 if quicksort(test, 0, len(test) - 1, 1, time_limit, start_time,0) in ["DNF", "DNF-rec limit"]:
                     l.append("DNF")
                 else:
+                    time1 = time.time() - start_time
                     if check(test):
-                        l.append(str(time.time() - start_time))
+                        l.append(str(time1))
                     else:
-                        l.append(f"Not sorted correctly, time:{time.time() - start_time}",time.time() - start_time)
+                        l.append(f"Not sorted correctly, time:{time1}")
 
             start_time = time.time()
             test = lists_dict[i].copy()
             if merge_sort(test, 0, len(test) - 1) == "DNF":
                 l.append("DNF")
             else:
+                time2 = time.time() - start_time
                 if check(test):
-                    l.append(str(time.time() - start_time))
+                    l.append(str(time2))
                 else:
-                    l.append(f"Not sorted correctly, time:{time.time() - start_time}",time.time() - start_time)
+                    l.append(f"Not sorted correctly, time:{time2}")
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -200,7 +204,7 @@ if __name__ == "__main__":
                 if check(test) == True:
                     l.append(test_time5)
                 else:
-                    l.append(f"Not sorted correctly, time:{test_time5}",test_time5)
+                    l.append(f"Not sorted correctly, time:{test_time5}")
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -211,7 +215,7 @@ if __name__ == "__main__":
                 if check(test) == True:
                     l.append(test_time6)
                 else:
-                    l.append(f"Not sorted correctly, time:{test_time6}",test_time6)
+                    l.append(f"Not sorted correctly, time:{test_time6}")
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -222,7 +226,7 @@ if __name__ == "__main__":
                 if check(test) == True:
                     l.append(test_time7)
                 else:
-                    l.append(f"Not sorted correctly, time:{test_time7}",test_time7)
+                    l.append(f"Not sorted correctly, time:{test_time7}")
 
             csvwriter.writerow(l)
 
