@@ -34,7 +34,7 @@ def pivot1(arr, first, last, time_limit, start_time):
             arr[i], arr[j] = arr[j], arr[i]
 
     arr[i], arr[last] = arr[last], arr[i]
-    return i
+    return (first+last)//2
 
 
 def merge_sort(arr, first, last):
@@ -171,7 +171,7 @@ if __name__ == "__main__":
                     if check(test):
                         l.append(str(time.time() - start_time))
                     else:
-                        l.append("Error")
+                        l.append(f"Not sorted correctly, time:{time.time() - start_time}",time.time() - start_time)
             else:
                 if quicksort(test, 0, len(test) - 1, 1, time_limit, start_time,0) in ["DNF", "DNF-rec limit"]:
                     l.append("DNF")
@@ -179,7 +179,7 @@ if __name__ == "__main__":
                     if check(test):
                         l.append(str(time.time() - start_time))
                     else:
-                        l.append("Error")
+                        l.append(f"Not sorted correctly, time:{time.time() - start_time}",time.time() - start_time)
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -189,7 +189,7 @@ if __name__ == "__main__":
                 if check(test):
                     l.append(str(time.time() - start_time))
                 else:
-                    l.append("Error")
+                    l.append(f"Not sorted correctly, time:{time.time() - start_time}",time.time() - start_time)
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -200,7 +200,7 @@ if __name__ == "__main__":
                 if check(test) == True:
                     l.append(test_time5)
                 else:
-                    l.append("Error")
+                    l.append(f"Not sorted correctly, time:{test_time5}",test_time5)
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -211,7 +211,7 @@ if __name__ == "__main__":
                 if check(test) == True:
                     l.append(test_time6)
                 else:
-                    l.append("Error")
+                    l.append(f"Not sorted correctly, time:{test_time6}",test_time6)
 
             start_time = time.time()
             test = lists_dict[i].copy()
@@ -222,7 +222,7 @@ if __name__ == "__main__":
                 if check(test) == True:
                     l.append(test_time7)
                 else:
-                    l.append("Error")
+                    l.append(f"Not sorted correctly, time:{test_time7}",test_time7)
 
             csvwriter.writerow(l)
 
